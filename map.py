@@ -26,8 +26,12 @@ def generate_heatmap():
     for month, group in df.groupby('month'):
         markers_by_month[month] = []
         coordenadas_por_mes[month] = group[['lat', 'long']].values.tolist()
-        previous_date = group.iloc[1]['day']
-        previous_info = group.iloc[1]['info']
+        if len(group) > 1:
+            previous_date = group.iloc[1]['day']
+            previous_info = group.iloc[1]['info']
+        else:
+            previous_date = ''
+            previous_info = ''
         for _, row in group.iterrows():
             if row['day'] != previous_date or row['info'] != previous_info:
                 marker = {'location': row[['lat', 'long']].values.tolist(),
