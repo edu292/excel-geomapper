@@ -1,0 +1,8 @@
+pandas~=2.2.3
+folium~=0.19.6
+Jinja2~=3.1.6
+streamlit~=1.45.1
+streamlit_folium~=0.25.0
+requests~=2.32.3
+python-dotenv~=1.1.0
+urllib3~=2.4.0
